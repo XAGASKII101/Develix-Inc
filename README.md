@@ -64,26 +64,26 @@ Built with **React 18 + Vite**, the site is optimized for **speed, scalability, 
 1. Clone the repository:
    ```bash
    git clone https://github.com/XAGASKII101/Develix-Inc.git
-   cd Develix-Inc
+   cd Develix-Inc```
 
 2. Install dependencies:
-
+```
 npm install
 # or
 yarn install
-
+```
 
 3. Run the development server:
-
+```
 npm run dev
 # or
 yarn dev
-
+```
 
 4. Build for production:
-
+```
 npm run build
-
+```
 ## 📁 Project Structure
 ```
 Develix-Inc/
@@ -105,7 +105,7 @@ Develix-Inc/
 📦 Deployment
 
 The site can be deployed easily on:
-
+```
 Vercel
 
 Netlify
@@ -113,7 +113,7 @@ Netlify
 GitHub Pages
 
 Any cloud hosting provider
-
+```
 📬 Contact
 
 📧 Email: info@develixinc.com
