@@ -62,7 +62,7 @@ Built with **React 18 + Vite**, the site is optimized for **speed, scalability, 
 ## 🛠️ Installation & Setup
 
 1. Clone the repository:
-   ```
+```
 bash
    git clone https://github.com/XAGASKII101/Develix-Inc.git
    cd Develix-Inc
