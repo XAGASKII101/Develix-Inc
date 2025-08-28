@@ -62,9 +62,11 @@ Built with **React 18 + Vite**, the site is optimized for **speed, scalability, 
 ## 🛠️ Installation & Setup
 
 1. Clone the repository:
-   ```bash
+   ```
+bash
    git clone https://github.com/XAGASKII101/Develix-Inc.git
-   cd Develix-Inc```
+   cd Develix-Inc
+```
 
 2. Install dependencies:
 ```
@@ -102,33 +104,13 @@ Develix-Inc/
 └── vite.config.js # Vite configuration
 ```
 
-📦 Deployment
-
-The site can be deployed easily on:
-```
-Vercel
-
-Netlify
-
-GitHub Pages
-
-Any cloud hosting provider
-```
 📬 Contact
 
 📧 Email: info@develixinc.com
 
-🌍 Website: Develix Inc
+🌍 Website: Develix Inc (Coming Soon)
 
 🐦 Twitter: @DevelixInc
 
 💙 Built with passion by the Develix Inc Team.
 
-
----
-
-This way your README is both:  
-- **A professional company profile** (services, mission, contact)  
-- **A developer project guide** (tech stack, setup, deployment, structure)  
-
-👉 Do you also want me to add **badges (Build, License, React, Tailwind, 
