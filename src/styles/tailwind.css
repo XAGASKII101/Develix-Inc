@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --color-primary: #0A1628; /* deep-navy */
+    --color-primary-foreground: #FFFFFF; /* white */
+    --color-secondary: #00D9FF; /* electric-blue */
+    --color-secondary-foreground: #0A1628; /* deep-navy */
+    --color-accent: #FFB800; /* warm-gold */
+    --color-accent-foreground: #0A1628; /* deep-navy */
+    
+    /* Background & Surface */
+    --color-background: #FFFFFF; /* white */
+    --color-foreground: #1A202C; /* rich-black */
+    --color-surface: #F7FAFC; /* gray-50 */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #1A202C; /* rich-black */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #1A202C; /* rich-black */
+    
+    /* Text Hierarchy */
+    --color-muted: #F7FAFC; /* gray-50 */
+    --color-muted-foreground: #4A5568; /* gray-600 */
+    
+    /* Interactive Elements */
+    --color-border: #E2E8F0; /* gray-200 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #00D9FF; /* electric-blue */
+    
+    /* Status Colors */
+    --color-success: #38A169; /* green-500 */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #D69E2E; /* yellow-600 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    --color-error: #E53E3E; /* red-500 */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #E53E3E; /* red-500 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+  }
+  
+  body, p, span, div {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .brand-shadow-card {
+    box-shadow: 0 4px 16px rgba(10, 22, 40, 0.08);
+  }
+  
+  .brand-shadow-modal {
+    box-shadow: 0 8px 32px rgba(10, 22, 40, 0.12);
+  }
+  
+  .brand-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .brand-hover-lift:hover {
+    transform: translateY(-2px);
+  }
+  
+  .brand-hover-scale:hover {
+    transform: scale(1.02);
+  }
+}
