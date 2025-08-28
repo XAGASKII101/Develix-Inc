@@ -85,22 +85,22 @@ yarn dev
 npm run build
 
 ## 📁 Project Structure
-
+```
 Develix-Inc/
-├── public/             # Static assets
+├── public/ # Static assets
 ├── src/
-│   ├── components/     # Reusable UI components
-│   ├── pages/          # Website pages
-│   ├── styles/         # Global styles & Tailwind config
-│   ├── App.jsx         # Main app component
-│   ├── Routes.jsx      # Routing setup
-│   └── index.jsx       # Entry point
-├── .env                # Environment variables
-├── index.html          # HTML template
-├── package.json        # Dependencies & scripts
-├── tailwind.config.js  # Tailwind configuration
-└── vite.config.js      # Vite configuration
-
+│ ├── components/ # Reusable UI components
+│ ├── pages/ # Website pages
+│ ├── styles/ # Global styles & Tailwind config
+│ ├── App.jsx # Main app component
+│ ├── Routes.jsx # Routing setup
+│ └── index.jsx # Entry point
+├── .env # Environment variables
+├── index.html # HTML template
+├── package.json # Dependencies & scripts
+├── tailwind.config.js # Tailwind configuration
+└── vite.config.js # Vite configuration
+```
 
 📦 Deployment
 
