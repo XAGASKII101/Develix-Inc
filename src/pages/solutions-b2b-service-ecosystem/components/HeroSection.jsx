@@ -65,8 +65,8 @@ const HeroSection = () => {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-28">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Hero Content */}
-          <div className="space-y-8">
-            <div className="space-y-6">
+          <div className="space-y-8 flex flex-col text-center items-center lg:items-start lg:text-start">
+            <div className="space-y-6 lg:mx-auto">
               <div className="inline-flex items-center px-4 py-2 bg-secondary/20 rounded-full text-sm font-medium">
                 <Icon name="Sparkles" size={16} className="mr-2" />
                 Enterprise Solutions
