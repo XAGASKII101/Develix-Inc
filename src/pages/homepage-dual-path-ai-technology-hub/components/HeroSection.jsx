@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 import { Link } from "react-router-dom";
 import Button from "../../../components/ui/Button";
 import Icon from "../../../components/AppIcon";
@@ -42,7 +44,7 @@ const HeroSection = () => {
   const currentDemoData = demos?.[currentDemo];
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-primary via-primary/95 to-primary/90 overflow-hidden">
+    <section className="relative min-h-screen  from-primary via-primary/95 to-primary/90 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 bg-secondary rounded-full blur-3xl"></div>
@@ -55,20 +57,17 @@ const HeroSection = () => {
           <div className="text-center lg:text-left">
             <div className="mb-6">
               <div className="inline-flex items-center px-4 py-2 bg-secondary/20 rounded-full mb-6">
-                <Icon name="Zap" size={16} className="text-secondary mr-2" />
-                <span className="text-secondary font-inter font-medium text-sm">
+                <Icon name="Zap" size={16} className="mr-2" />
+                <span className="font-inter font-medium text-sm">
                   Practical Innovation
                 </span>
               </div>
 
-              <h1 className="font-space-grotesk font-bold text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-tight mb-6">
-                AI & Software that{" "}
-                <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
-                  solve real problems
-                </span>
+              <h1 className="font-space-grotesk font-bold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
+                AI & Software that solve real problems
               </h1>
 
-              <p className="font-inter text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl">
+              <p className="font-inter text-lg md:text-xl text-para mb-8 max-w-2xl">
                 Building the future from Africa, for the world. Empowering
                 businesses and consumers with cutting-edge technology that
                 delivers measurable impact.
@@ -81,7 +80,7 @@ const HeroSection = () => {
                 <Button
                   variant="default"
                   size="lg"
-                  className="bg-secondary hover:bg-secondary/90 text-primary font-inter font-semibold brand-hover-lift w-full sm:w-auto"
+                  className="hover:bg-hover-bg font-inter font-semibold w-full sm:w-auto duration-150"
                   iconName="Building2"
                   iconPosition="left"
                 >
@@ -93,7 +92,7 @@ const HeroSection = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-secondary text-secondary hover:bg-secondary hover:text-primary font-inter font-semibold brand-hover-lift w-full sm:w-auto"
+                  className="border-para hover:bg-secondary hover:border-secondary duration-150 hover:text-primary font-inter font-semibold w-full sm:w-auto"
                   iconName="Smartphone"
                   iconPosition="left"
                 >
@@ -125,26 +124,37 @@ const HeroSection = () => {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div
-                    className={`w-12 h-12 bg-gradient-to-br ${currentDemoData?.color} rounded-xl flex items-center justify-center`}
+                    className={`w-12 h-12 bg-gradient-to-br ${currentDemoData?.color} rounded-xl flex items-center justify-center duration-100`}
                   >
                     <Icon
                       name={currentDemoData?.id === "elixa" ? "Coins" : "Brain"}
                       size={24}
-                      className="text-primary-foreground"
+                      className="text-primary-foreground transition-all duration-100"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-space-grotesk font-bold text-xl text-primary-foreground">
-                      {currentDemoData?.title}
-                    </h3>
-                    <p className="font-inter text-sm text-primary-foreground/70">
-                      {currentDemoData?.subtitle}
-                    </p>
-                  </div>
+
+                  {/* Animate title + subtitle */}
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentDemo}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                    >
+                      <h3 className="font-space-grotesk font-bold text-xl ">
+                        {currentDemoData?.title}
+                      </h3>
+                      <p className="font-inter text-sm text-primary-foreground/70">
+                        {currentDemoData?.subtitle}
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
                 </div>
 
+                {/* Dots navigation */}
                 <div className="flex space-x-2">
-                  {demos?.map((_, index) => (
+                  {demos.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentDemo(index)}
@@ -158,24 +168,55 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              <p className="font-inter text-primary-foreground/80 mb-6">
-                {currentDemoData?.description}
-              </p>
+              {/* Animate description */}
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={currentDemo + "-desc"}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="font-inter text-primary-foreground/80 mb-6"
+                >
+                  {currentDemoData?.description}
+                </motion.p>
+              </AnimatePresence>
 
-              <div className="grid grid-cols-1 gap-3 mb-6">
-                {currentDemoData?.features?.map((feature, index) => (
-                  <div key={index} className="flex items-center">
-                    <Icon
-                      name="Check"
-                      size={16}
-                      className="text-secondary mr-3"
-                    />
-                    <span className="font-inter text-sm text-primary-foreground/90">
-                      {feature}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              {/* Animate features */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentDemo + "-features"}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{
+                    duration: 0.4,
+                    ease: "easeInOut",
+                    staggerChildren: 0.1,
+                  }}
+                  className="grid grid-cols-1 gap-3 mb-6"
+                >
+                  {currentDemoData?.features?.map((feature, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -10 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                      className="flex items-center"
+                    >
+                      <Icon
+                        name="Check"
+                        size={16}
+                        className="text-secondary mr-3"
+                      />
+                      <span className="font-inter text-sm text-primary-foreground/90">
+                        {feature}
+                      </span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
 
               <Link to="/projects-hub">
                 <Button
@@ -188,10 +229,6 @@ const HeroSection = () => {
                 </Button>
               </Link>
             </div>
-
-            {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent rounded-full animate-pulse"></div>
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-secondary rounded-full animate-pulse delay-1000"></div>
           </div>
         </div>
       </div>

@@ -33,6 +33,12 @@ export default {
           DEFAULT: "var(--color-secondary)" /* electric-blue */,
           foreground: "var(--color-secondary-foreground)" /* deep-navy */,
         },
+        para: {
+          DEFAULT: "var(--color-para)",
+        },
+        hover: {
+          bg: "var(--color-hover-bg)",
+        },
         destructive: {
           DEFAULT: "var(--color-destructive)" /* red-500 */,
           foreground: "var(--color-destructive-foreground)" /* white */,
