@@ -73,13 +73,12 @@ const HeroSection = () => {
               </div>
 
               <h1 className="text-4xl lg:text-6xl font-space-grotesk font-bold leading-tight">
-                Enterprise AI & Blockchain Solutions.
+                Enterprise Solutions Built for Scale
               </h1>
 
               <p className="text-xl text-para leading-relaxed max-w-xl">
-                Transform your business with cutting-edge AI and blockchain
-                solutions designed specifically for Nigerian enterprises. From
-                fintech integrations to supply chain optimization.
+                Transform your business with AI-powered solutions designed for
+                African enterprises, Global standards, local expertise
               </p>
             </div>
 

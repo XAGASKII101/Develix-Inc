@@ -64,13 +64,12 @@ const HeroSection = () => {
               </div>
 
               <h1 className="font-space-grotesk font-bold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
-                AI & Software that solve real problems
+                Technology Without Barriers
               </h1>
 
               <p className="font-inter text-lg md:text-xl text-para mb-8 max-w-2xl">
-                Building the future from Africa, for the world. Empowering
-                businesses and consumers with cutting-edge technology that
-                delivers measurable impact.
+                AI & Software that solve real problems Built in Nigeria,
+                designed for the world
               </p>
             </div>
 
