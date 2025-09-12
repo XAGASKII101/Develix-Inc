@@ -54,8 +54,8 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-6 lg:px-8 pt-24 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Left Content */}
-          <div className="text-center lg:text-left">
-            <div className="mb-6">
+          <div className="text-center flex flex-col items-center lg:items-start lg:text-start">
+            <div className="mb-6 flex flex-col items-center lg:items-start">
               <div className="inline-flex items-center px-4 py-2 bg-secondary/20 rounded-full mb-6">
                 <Icon name="Zap" size={16} className="mr-2" />
                 <span className="font-inter font-medium text-sm">
