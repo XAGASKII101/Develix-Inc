@@ -92,7 +92,7 @@ const HeroSection = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="duration-150 border-primary-foreground/20 font-inter w-full sm:w-auto"
+                  className="duration-150 border-primary-foreground/20 hover:border-accent font-inter w-full sm:w-auto"
                   iconName="Smartphone"
                   iconPosition="left"
                 >

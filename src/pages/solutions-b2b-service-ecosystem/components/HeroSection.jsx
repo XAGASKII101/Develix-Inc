@@ -95,7 +95,7 @@ const HeroSection = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-primary-foreground/20 text-primary"
+                className="border-primary-foreground/20 hover:border-accent text-primary"
                 iconName="Play"
                 iconPosition="left"
               >
