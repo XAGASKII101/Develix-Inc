@@ -74,7 +74,7 @@ const Header = () => {
       }`}
     >
       <div className="w-full">
-        <div className="flex items-center justify-between h-16 px-6 lg:px-32">
+        <div className="flex items-center justify-between h-16 px-6 lg:px-8 2xl:px-28">
           {/* Logo */}
           <Link
             to="/"
@@ -154,7 +154,7 @@ const Header = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                className="font-inter font-medium"
+                className="font-inter font-medium duration-150"
               >
                 Contact
               </Button>
@@ -162,7 +162,7 @@ const Header = () => {
             <Button
               variant="default"
               size="sm"
-              className="bg-primary hover:bg-primary/90 font-inter font-semibold brand-hover-lift"
+              className="hover:bg-hover-bg font-inter font-semibold =duration-150"
             >
               Get Started
             </Button>
@@ -195,10 +195,10 @@ const Header = () => {
                   key={item?.path}
                   to={item?.path}
                   onClick={closeMenu}
-                  className={`block px-4 py-3 rounded-lg font-inter font-medium brand-transition ${
+                  className={`block px-4 py-3 rounded-lg font-inter font-medium duration-100 ${
                     isActivePath(item?.path)
                       ? "text-primary bg-primary/10 border-l-4 border-primary"
-                      : "text-foreground hover:text-primary hover:bg-primary/5"
+                      : "text-foreground hover:border-l-4 hover:text-primary hover:bg-surface"
                   }`}
                 >
                   <div className="flex flex-col">
@@ -215,10 +215,10 @@ const Header = () => {
                   key={item?.path}
                   to={item?.path}
                   onClick={closeMenu}
-                  className={`block px-4 py-3 rounded-lg font-inter font-medium brand-transition ${
+                  className={`block px-4 py-3 rounded-lg font-inter font-medium duration-100 ${
                     isActivePath(item?.path)
                       ? "text-primary bg-primary/10 border-l-4 border-primary"
-                      : "text-foreground hover:text-primary hover:bg-primary/5"
+                      : "text-foreground hover:border-l-4 hover:text-primary hover:bg-surface"
                   }`}
                 >
                   <div className="flex flex-col">
