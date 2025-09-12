@@ -80,7 +80,7 @@ const HeroSection = () => {
                 <Button
                   variant="default"
                   size="lg"
-                  className="hover:bg-hover-bg font-inter font-semibold w-full sm:w-auto duration-150"
+                  className="hover:bg-hover-bg font-inter font-semibold w-full sm:w-auto duration-150 brand-hover-lift"
                   iconName="Building2"
                   iconPosition="left"
                 >
@@ -92,7 +92,7 @@ const HeroSection = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-para hover:bg-secondary hover:border-secondary duration-150 hover:text-primary font-inter font-semibold w-full sm:w-auto"
+                  className="duration-150 border-primary-foreground/20 font-inter w-full sm:w-auto"
                   iconName="Smartphone"
                   iconPosition="left"
                 >

@@ -55,7 +55,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-primary-foreground overflow-hidden">
+    <section className="relative from-primary via-primary/95 to-primary/90 text-primary overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 border border-secondary rounded-full"></div>
@@ -67,19 +67,16 @@ const HeroSection = () => {
           {/* Hero Content */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <div className="inline-flex items-center px-4 py-2 bg-secondary/20 rounded-full text-secondary text-sm font-medium">
+              <div className="inline-flex items-center px-4 py-2 bg-secondary/20 rounded-full text-sm font-medium">
                 <Icon name="Sparkles" size={16} className="mr-2" />
                 Enterprise Solutions
               </div>
 
               <h1 className="text-4xl lg:text-6xl font-space-grotesk font-bold leading-tight">
-                Enterprise AI & Blockchain Solutions
-                <span className="block text-secondary mt-2">
-                  Built for African Markets
-                </span>
+                Enterprise AI & Blockchain Solutions.
               </h1>
 
-              <p className="text-xl text-primary-foreground/80 leading-relaxed max-w-xl">
+              <p className="text-xl text-para leading-relaxed max-w-xl">
                 Transform your business with cutting-edge AI and blockchain
                 solutions designed specifically for Nigerian enterprises. From
                 fintech integrations to supply chain optimization.
@@ -88,9 +85,8 @@ const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                variant="secondary"
                 size="lg"
-                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold brand-hover-lift"
+                className="hover:bg-hover-bg duration-150 font-semibold brand-hover-lift"
                 iconName="Calendar"
                 iconPosition="left"
               >
@@ -99,7 +95,7 @@ const HeroSection = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+                className="border-primary-foreground/20 text-primary"
                 iconName="Play"
                 iconPosition="left"
               >
@@ -110,22 +106,16 @@ const HeroSection = () => {
             {/* Trust Indicators */}
             <div className="flex items-center space-x-8 pt-8 border-t border-primary-foreground/20">
               <div className="text-center">
-                <div className="text-2xl font-bold text-secondary">50+</div>
-                <div className="text-sm text-primary-foreground/70">
-                  Enterprise Clients
-                </div>
+                <div className="text-2xl font-bold ">50+</div>
+                <div className="text-sm text-para">Enterprise Clients</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-secondary">₦2.5B+</div>
-                <div className="text-sm text-primary-foreground/70">
-                  Cost Savings Generated
-                </div>
+                <div className="text-2xl font-bold ">₦2.5B+</div>
+                <div className="text-sm text-para">Cost Savings Generated</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-secondary">99.9%</div>
-                <div className="text-sm text-primary-foreground/70">
-                  Uptime Guarantee
-                </div>
+                <div className="text-2xl font-bold ">99.9%</div>
+                <div className="text-sm text-para">Uptime Guarantee</div>
               </div>
             </div>
           </div>
