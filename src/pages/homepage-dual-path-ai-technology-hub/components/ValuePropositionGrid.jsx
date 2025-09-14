@@ -67,10 +67,7 @@ const ValuePropositionGrid = () => {
           </div>
 
           <h2 className="font-space-grotesk font-bold text-3xl md:text-4xl text-foreground mb-6">
-            Why Choose{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Develix
-            </span>
+            Why Choose Develix
           </h2>
 
           <p className="font-inter text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -161,7 +158,7 @@ const ValuePropositionGrid = () => {
                 <Button
                   variant="default"
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 font-inter font-semibold"
+                  className="bg-primary hover:bg-primary/90 font-inter font-semibold brand-hover-lift"
                   iconName="Code"
                   iconPosition="left"
                 >
@@ -173,7 +170,7 @@ const ValuePropositionGrid = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-inter font-semibold"
+                  className="border-primary-foreground/20 text-primary hover:bg-accent hover:border-accent hover:text-primary-foreground font-inter font-semibold"
                   iconName="Building2"
                   iconPosition="left"
                 >

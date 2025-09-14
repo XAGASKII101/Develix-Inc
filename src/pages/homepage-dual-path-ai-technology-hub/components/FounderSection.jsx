@@ -53,10 +53,7 @@ const FounderSection = () => {
           </div>
 
           <h2 className="font-space-grotesk font-bold text-3xl md:text-4xl text-foreground mb-6">
-            Meet the Visionaries Behind{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Develix
-            </span>
+            Meet the Visionaries Behind Develix
           </h2>
 
           <p className="font-inter text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -70,7 +67,6 @@ const FounderSection = () => {
           {founders?.map((founder) => (
             <div key={founder?.id} className="group">
               <div className="bg-card rounded-2xl p-8 border border-border brand-shadow-card brand-transition group-hover:brand-shadow-modal group-hover:-translate-y-2">
-                {/* Header */}
                 <div className="flex items-start space-x-6 mb-6">
                   <div className="relative">
                     <div className="w-20 h-20 rounded-2xl overflow-hidden">
@@ -159,9 +155,8 @@ const FounderSection = () => {
               Ready to Build the Future Together?
             </h3>
             <p className="font-inter text-para mb-6 max-w-2xl mx-auto">
-              Join our mission to democratize technology across Africa and
-              beyond. Whether you're an enterprise seeking solutions or a
-              developer wanting to contribute, we'd love to connect.
+              Join thousands of businesses and individuals already using Develix
+              technology to solve real problems.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

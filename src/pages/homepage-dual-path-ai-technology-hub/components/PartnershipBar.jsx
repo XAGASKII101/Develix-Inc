@@ -78,13 +78,12 @@ const PartnershipBar = () => {
             </div>
 
             <h2 className="font-space-grotesk font-bold text-2xl md:text-3xl text-foreground mb-4">
-              Integrated with Industry Leaders
+              Our Previous Partners
             </h2>
 
             <p className="font-inter text-muted-foreground max-w-2xl mx-auto">
-              Our solutions seamlessly integrate with the world's most trusted
-              platforms and services, ensuring enterprise-grade reliability and
-              performance.
+              Organizations and companies we’ve collaborated with across
+              technology and payments
             </p>
           </div>
 
