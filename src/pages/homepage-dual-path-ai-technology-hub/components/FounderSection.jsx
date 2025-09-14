@@ -154,11 +154,11 @@ const FounderSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="font-space-grotesk font-bold text-2xl text-primary-foreground mb-4">
+          <div className="bg-secondary rounded-2xl p-8 max-w-4xl mx-auto">
+            <h3 className="font-space-grotesk font-bold text-2xl text-primary mb-4">
               Ready to Build the Future Together?
             </h3>
-            <p className="font-inter text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
+            <p className="font-inter text-para mb-6 max-w-2xl mx-auto">
               Join our mission to democratize technology across Africa and
               beyond. Whether you're an enterprise seeking solutions or a
               developer wanting to contribute, we'd love to connect.
@@ -169,7 +169,7 @@ const FounderSection = () => {
                 <Button
                   variant="secondary"
                   size="lg"
-                  className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-inter font-semibold"
+                  className="bg-primary-foreground text-primary hover:bg-primary-foreground brand-hover-lift font-inter font-semibold"
                   iconName="Users"
                   iconPosition="left"
                 >
@@ -181,7 +181,7 @@ const FounderSection = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-inter font-semibold"
+                  className="border-primary-foreground text-primary-foreground hover:bg-accent hover:border-accent hover:text-primary-foreground font-inter font-semibold"
                   iconName="MessageCircle"
                   iconPosition="left"
                 >
