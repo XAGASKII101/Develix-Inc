@@ -320,28 +320,23 @@ const AboutEcosystemPage = () => {
       <section className="pt-24 pb-16 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center">
-                <Icon
-                  name="Heart"
-                  size={32}
-                  className="text-primary-foreground"
-                />
+            <div className="flex text-center items-center justify-center flex-col mb-4">
+              <div className="inline-flex items-center px-4 pb-4 pt-10 bg-secondary/20 rounded-full text-sm font-medium">
+                <Icon name="Users" size={16} className="mr-2" />
+                About us
               </div>
-              <div className="text-left">
-                <h1 className="text-4xl lg:text-6xl font-space-grotesk font-bold text-foreground">
-                  About Our Ecosystem
-                </h1>
-                <p className="text-lg text-primary font-inter font-semibold">
-                  Founder Stories & Culture
-                </p>
-              </div>
+              <h1 className="text-4xl lg:text-6xl font-space-grotesk font-bold text-foreground mb-2">
+                Our Story
+              </h1>
+              <p className="text-lg text-para font-inter font-semibold">
+                From Adazi to the World
+              </p>
             </div>
 
-            <p className="text-xl text-muted-foreground font-inter max-w-4xl mx-auto leading-relaxed">
-              The people, values, and vision behind Develix. Learn about our
-              journey from a Lagos tech meetup to building Africa's premier
-              AI-first technology company, and meet the team making it happen.
+            <p className="text-xl text-para font-inter max-w-4xl mx-auto leading-relaxed">
+              Founded in 2025 by 17-year-old Alexius Dubem and 16-year-old
+              Jerome Ebube in Anambra State — a journey from a spark of dreams
+              to trials, reality, and a passion for technology.
             </p>
           </div>
 
