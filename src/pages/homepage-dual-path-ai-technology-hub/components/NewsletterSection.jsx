@@ -3,14 +3,23 @@ import Button from "../../../components/ui/Button";
 import Input from "../../../components/ui/Input";
 import Icon from "../../../components/AppIcon";
 
+const validateEmail = (email) => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+};
+
 const NewsletterSection = () => {
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(""); // for validation error
 
   const handleSubmit = async (e) => {
     e?.preventDefault();
-    if (!email) return;
+    if (!email || !validateEmail(email)) {
+      setError("Please enter a valid email address");
+      return;
+    }
 
     setIsLoading(true);
 
@@ -104,7 +113,7 @@ const NewsletterSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
-              <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full mb-6">
+              <div className="inline-flex items-center bg-primary/10 rounded-full mb-6">
                 <Icon name="Mail" size={16} className="text-primary mr-2" />
                 <span className="text-primary font-inter font-medium text-sm">
                   Stay Connected
@@ -112,10 +121,7 @@ const NewsletterSection = () => {
               </div>
 
               <h2 className="font-space-grotesk font-bold text-3xl md:text-4xl text-foreground mb-6">
-                Join the{" "}
-                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  Innovation Journey
-                </span>
+                Join th Innovation Journey
               </h2>
 
               <p className="font-inter text-lg text-muted-foreground mb-8">
@@ -131,7 +137,7 @@ const NewsletterSection = () => {
                     key={benefit?.title}
                     className="flex items-start space-x-3"
                   >
-                    <div className="w-8 h-8 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 bg-secondary/20 rounded-lg flex items-center flex-shrink-0 mt-1">
                       <Icon
                         name={benefit?.icon}
                         size={16}
@@ -154,7 +160,7 @@ const NewsletterSection = () => {
               <div className="flex items-center space-x-6 text-muted-foreground">
                 <div className="flex items-center">
                   <Icon name="Users" size={16} className="mr-2" />
-                  <span className="font-inter text-sm">2,500+ subscribers</span>
+                  <span className="font-inter text-sm">500+ subscribers</span>
                 </div>
                 <div className="flex items-center">
                   <Icon name="Shield" size={16} className="mr-2" />
@@ -177,10 +183,11 @@ const NewsletterSection = () => {
                     <Input
                       type="email"
                       label="Email Address"
-                      placeholder="Enter your email address"
+                      placeholder="example@gmail.com"
                       value={email}
                       onChange={(e) => setEmail(e?.target?.value)}
                       required
+                      error={error}
                       className="mb-4"
                     />
                   </div>
