@@ -8,36 +8,19 @@ const FounderSection = () => {
   const founders = [
     {
       id: "alexius",
-      name: "Alexius Chukwuemeka",
-      role: "Chief Executive Officer",
+      name: "Alexius Dubem",
+      role: "CEO & Co-founder",
       avatar:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      story: `From Lagos streets to Silicon Valley dreams. Started coding at 14, built first startup at 19. Believes technology should empower every African entrepreneur to compete globally.`,
-      achievements: [
-        "Forbes 30 Under 30",
-        "3x Startup Founder",
-        "Y Combinator Alumni",
-      ],
-      quote:
-        "Innovation isn't about complexity—it's about solving problems that matter.",
-      linkedin: "#",
-      twitter: "#",
+      story: `Software engineering student at UNIZIK with strong skills in HTML, CSS, and JavaScript. A passionate tech enthusiast since childhood, now building real-world solutions at just 17.`,
     },
     {
       id: "jerome",
-      name: "Jerome Okafor",
-      role: "Chief Technology Officer",
+      name: "Jerome Ebube",
+      role: "CTO & Co-founder",
       avatar:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-      story: `Self-taught developer turned AI architect. Built Nigeria's first blockchain voting system. Passionate about making advanced technology accessible to African developers.`,
-      achievements: [
-        "MIT AI Research",
-        "Blockchain Pioneer",
-        "Open Source Advocate",
-      ],
-      quote: "Code is poetry, but impact is the applause that matters.",
-      linkedin: "#",
-      twitter: "#",
+      story: `Forward-thinking young innovator with a strong passion for technology, entrepreneurship, and building platforms that empower the African digital economy.`,
     },
   ];
 
@@ -48,18 +31,16 @@ const FounderSection = () => {
           <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full mb-6">
             <Icon name="Heart" size={16} className="text-primary mr-2" />
             <span className="text-primary font-inter font-medium text-sm">
-              From Lagos to Global Innovation
+              Behind Develix
             </span>
           </div>
 
           <h2 className="font-space-grotesk font-bold text-3xl md:text-4xl text-foreground mb-6">
-            Meet the Visionaries Behind Develix
+            Meet Our Founders
           </h2>
 
           <p className="font-inter text-lg text-muted-foreground max-w-3xl mx-auto">
-            Two Nigerian innovators on a mission to bridge the gap between
-            African talent and global opportunities through practical technology
-            solutions.
+            Young innovators shaping the future of African technology
           </p>
         </div>
 
@@ -92,57 +73,12 @@ const FounderSection = () => {
                     <p className="font-inter text-primary font-medium mb-3">
                       {founder?.role}
                     </p>
-
-                    <div className="flex space-x-3">
-                      <a
-                        href={founder?.linkedin}
-                        className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground brand-transition"
-                      >
-                        <Icon name="Linkedin" size={16} />
-                      </a>
-                      <a
-                        href={founder?.twitter}
-                        className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground brand-transition"
-                      >
-                        <Icon name="Twitter" size={16} />
-                      </a>
-                    </div>
                   </div>
                 </div>
 
-                {/* Quote */}
-                <div className="mb-6">
-                  <Icon
-                    name="Quote"
-                    size={24}
-                    className="text-secondary mb-3"
-                  />
-                  <blockquote className="font-inter text-foreground italic text-lg leading-relaxed">
-                    "{founder?.quote}"
-                  </blockquote>
-                </div>
-
-                {/* Story */}
                 <p className="font-inter text-muted-foreground leading-relaxed mb-6">
                   {founder?.story}
                 </p>
-
-                {/* Achievements */}
-                <div className="space-y-3">
-                  <h4 className="font-space-grotesk font-semibold text-foreground text-sm uppercase tracking-wide">
-                    Key Achievements
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {founder?.achievements?.map((achievement, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-secondary/10 text-secondary rounded-full font-inter text-sm font-medium"
-                      >
-                        {achievement}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
           ))}
