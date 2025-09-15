@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../../../components/ui/Button";
 import Icon from "../../../components/AppIcon";
+import { motion } from "framer-motion";
+import {
+  containerVariants,
+  listVariants,
+  itemVariants,
+} from "../../../lib/animations";
 
 const ValuePropositionGrid = () => {
   const valueProps = [
@@ -56,9 +62,15 @@ const ValuePropositionGrid = () => {
   ];
 
   return (
-    <section className="py-20 bg-surface">
+    <motion.section
+      className="py-20 bg-surface"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
+        {/* Header */}
+        <motion.div className="text-center mb-16" variants={containerVariants}>
           <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full mb-6">
             <Icon name="Target" size={16} className="text-primary mr-2" />
             <span className="text-primary font-inter font-medium text-sm">
@@ -74,16 +86,19 @@ const ValuePropositionGrid = () => {
             Three pillars that define our approach to technology and drive every
             decision we make in building solutions for the future.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {valueProps?.map((prop, index) => (
-            <div
-              key={prop?.id}
-              className="group relative"
-              style={{ animationDelay: `${index * 200}ms` }}
-            >
-              <div className="bg-card rounded-2xl p-8 border border-border brand-shadow-card brand-transition group-hover:brand-shadow-modal group-hover:-translate-y-2 h-full flex flex-col">
+        {/* Value Props */}
+        <motion.div
+          className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+          variants={listVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {valueProps?.map((prop) => (
+            <motion.div key={prop?.id} variants={itemVariants}>
+              <div className="bg-card rounded-2xl p-8 border border-border brand-shadow-card brand-transition group-hover:brand-shadow-modal group-hover:-translate-y-2 h-full flex flex-col group relative">
                 {/* Header */}
                 <div className="mb-6">
                   <div
@@ -137,12 +152,18 @@ const ValuePropositionGrid = () => {
                 {/* Decorative Element */}
                 <div className="absolute top-4 right-4 w-3 h-3 bg-accent rounded-full opacity-60 group-hover:opacity-100 brand-transition"></div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
+        <motion.div
+          className="text-center mt-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="bg-card rounded-2xl p-8 border border-border brand-shadow-card max-w-4xl mx-auto">
             <h3 className="font-space-grotesk font-bold text-2xl text-foreground mb-4">
               Experience Our Values in Action
@@ -179,9 +200,9 @@ const ValuePropositionGrid = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

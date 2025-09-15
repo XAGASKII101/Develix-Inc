@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Button from "../../../components/ui/Button";
 import Input from "../../../components/ui/Input";
 import Icon from "../../../components/AppIcon";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../../lib/animations";
 
 const validateEmail = (email) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -112,7 +114,12 @@ const NewsletterSection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div>
+            <motion.div
+              variants={fadeIn("right", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.4 }}
+            >
               <div className="inline-flex items-center bg-primary/10 rounded-full mb-6">
                 <Icon name="Mail" size={16} className="text-primary mr-2" />
                 <span className="text-primary font-inter font-medium text-sm">
@@ -121,7 +128,7 @@ const NewsletterSection = () => {
               </div>
 
               <h2 className="font-space-grotesk font-bold text-3xl md:text-4xl text-foreground mb-6">
-                Join th Innovation Journey
+                Join the Innovation Journey
               </h2>
 
               <p className="font-inter text-lg text-muted-foreground mb-8">
@@ -133,8 +140,12 @@ const NewsletterSection = () => {
               {/* Benefits Grid */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {benefits?.map((benefit, index) => (
-                  <div
+                  <motion.div
                     key={benefit?.title}
+                    variants={fadeIn("up", 0.2 + index * 0.15)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.4 }}
                     className="flex items-start space-x-3"
                   >
                     <div className="w-8 h-8 bg-secondary/20 rounded-lg flex items-center flex-shrink-0 mt-1">
@@ -152,12 +163,18 @@ const NewsletterSection = () => {
                         {benefit?.description}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
               {/* Trust Indicators */}
-              <div className="flex items-center space-x-6 text-muted-foreground">
+              <motion.div
+                variants={fadeIn("up", 0.5)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.4 }}
+                className="flex items-center space-x-6 text-muted-foreground"
+              >
                 <div className="flex items-center">
                   <Icon name="Users" size={16} className="mr-2" />
                   <span className="font-inter text-sm">500+ subscribers</span>
@@ -172,11 +189,17 @@ const NewsletterSection = () => {
                     Unsubscribe anytime
                   </span>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Right Form */}
-            <div className="lg:pl-8">
+            <motion.div
+              variants={fadeIn("left", 0.3)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.4 }}
+              className="lg:pl-8"
+            >
               <div className="bg-card rounded-2xl p-8 border border-border brand-shadow-card">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -219,7 +242,13 @@ const NewsletterSection = () => {
                 </form>
 
                 {/* Social Proof */}
-                <div className="mt-8 pt-6 border-t border-border">
+                <motion.div
+                  variants={fadeIn("up", 0.4)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, amount: 0.4 }}
+                  className="mt-8 pt-6 border-t border-border"
+                >
                   <p className="font-inter text-sm text-muted-foreground text-center mb-4">
                     Join innovators from leading companies:
                   </p>
@@ -238,9 +267,9 @@ const NewsletterSection = () => {
                       <Icon name="Smartphone" size={16} />
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

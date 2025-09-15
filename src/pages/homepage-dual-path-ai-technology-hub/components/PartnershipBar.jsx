@@ -1,5 +1,7 @@
 import React from "react";
 import Icon from "../../../components/AppIcon";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../../lib/animations";
 
 const PartnershipBar = () => {
   const partners = [
@@ -68,7 +70,13 @@ const PartnershipBar = () => {
     <section className="py-16 bg-background border-t border-border">
       <div className="container mx-auto px-6 lg:px-8">
         {/* Partnership Section */}
-        <div className="mb-16">
+        <motion.div
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.4 }}
+          className="mb-16"
+        >
           <div className="text-center mb-12">
             <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full mb-4">
               <Icon name="Handshake" size={16} className="text-primary mr-2" />
@@ -89,10 +97,13 @@ const PartnershipBar = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {partners?.map((partner, index) => (
-              <div
+              <motion.div
                 key={partner?.name}
+                variants={fadeIn("up", 0.1 + index * 0.1)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.4 }}
                 className="group bg-card rounded-xl p-6 border border-border brand-shadow-card brand-transition hover:brand-shadow-modal hover:-translate-y-1 text-center"
-                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:text-primary-foreground brand-transition">
                   <Icon name={partner?.logo} size={24} />
@@ -105,13 +116,19 @@ const PartnershipBar = () => {
                 <p className="font-inter text-xs text-muted-foreground">
                   {partner?.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Stats Section */}
-        <div className="bg-secondary rounded-2xl p-8 md:p-12">
+        <motion.div
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.4 }}
+          className="bg-secondary rounded-2xl p-8 md:p-12"
+        >
           <div className="text-center mb-8">
             <h2 className="font-space-grotesk font-bold text-2xl md:text-3xl text-primary mb-4">
               Growing Ecosystem Impact
@@ -124,10 +141,13 @@ const PartnershipBar = () => {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats?.map((stat, index) => (
-              <div
+              <motion.div
                 key={stat?.label}
+                variants={fadeIn("up", 0.2 + index * 0.15)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.4 }}
                 className="text-center group"
-                style={{ animationDelay: `${index * 150}ms` }}
               >
                 <div className="w-16 h-16 bg-primary-foreground/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-foreground group-hover:text-primary brand-transition">
                   <Icon
@@ -144,12 +164,18 @@ const PartnershipBar = () => {
                 <div className="font-inter text-primary-foreground/80 text-sm">
                   {stat?.label}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* Trust Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mt-12 pt-8 border-t border-primary">
+          <motion.div
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.4 }}
+            className="flex flex-wrap items-center justify-center gap-6 mt-12 pt-8 border-t border-primary"
+          >
             <div className="flex items-center text-primary-foreground/80">
               <Icon name="Shield" size={16} className="mr-2" />
               <span className="font-inter text-sm">SOC 2 Compliant</span>
@@ -166,8 +192,8 @@ const PartnershipBar = () => {
               <Icon name="Verified" size={16} className="mr-2" />
               <span className="font-inter text-sm">Enterprise Ready</span>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../../lib/animations"; // global animation utility
 import { Link } from "react-router-dom";
 import Button from "../../../components/ui/Button";
 import Image from "../../../components/AppImage";
@@ -27,7 +29,14 @@ const FounderSection = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
+        {/* Section header */}
+        <motion.div
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.4 }}
+          className="text-center mb-16"
+        >
           <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full mb-6">
             <Icon name="Heart" size={16} className="text-primary mr-2" />
             <span className="text-primary font-inter font-medium text-sm">
@@ -42,11 +51,19 @@ const FounderSection = () => {
           <p className="font-inter text-lg text-muted-foreground max-w-3xl mx-auto">
             Young innovators shaping the future of African technology
           </p>
-        </div>
+        </motion.div>
 
+        {/* Founders list */}
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {founders?.map((founder) => (
-            <div key={founder?.id} className="group">
+          {founders?.map((founder, i) => (
+            <motion.div
+              key={founder?.id}
+              variants={fadeIn("up", 0.2 + i * 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.4 }}
+              className="group"
+            >
               <div className="bg-card rounded-2xl p-8 border border-border brand-shadow-card brand-transition group-hover:brand-shadow-modal group-hover:-translate-y-2">
                 <div className="flex items-start space-x-6 mb-6">
                   <div className="relative">
@@ -80,12 +97,18 @@ const FounderSection = () => {
                   {founder?.story}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
+        <motion.div
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.4 }}
+          className="text-center mt-16"
+        >
           <div className="bg-secondary rounded-2xl p-8 max-w-4xl mx-auto">
             <h3 className="font-space-grotesk font-bold text-2xl text-primary mb-4">
               Ready to Build the Future Together?
@@ -121,7 +144,7 @@ const FounderSection = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

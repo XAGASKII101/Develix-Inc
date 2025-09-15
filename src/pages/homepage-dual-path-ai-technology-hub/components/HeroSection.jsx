@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { fadeIn, staggerContainer } from "../../../lib/animations";
 
 import { Link } from "react-router-dom";
 import Button from "../../../components/ui/Button";
@@ -53,29 +54,49 @@ const HeroSection = () => {
     >
       {/* Background Pattern */}
       <div className="relative z-10 container mx-auto px-6 lg:px-8 pt-24 pb-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+        <motion.div
+          className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {/* Left Content */}
-          <div className="text-center flex flex-col items-center lg:items-start lg:text-start">
+          <motion.div
+            className="text-center flex flex-col items-center lg:items-start lg:text-start"
+            variants={fadeIn("right", 0.1)}
+          >
             <div className="mb-6 flex flex-col items-center lg:items-start">
-              <div className="inline-flex items-center px-4 py-2 bg-secondary/20 rounded-full mb-6">
+              <motion.div
+                className="inline-flex items-center px-4 py-2 bg-secondary/20 rounded-full mb-6"
+                variants={fadeIn("up", 0.2)}
+              >
                 <Icon name="Zap" size={16} className="mr-2" />
                 <span className="font-inter font-medium text-sm">
                   Practical Innovation
                 </span>
-              </div>
-
-              <h1 className="font-space-grotesk font-bold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
+              </motion.div>
+              <motion.h1
+                className="font-space-grotesk font-bold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6"
+                variants={fadeIn("up", 0.3)}
+              >
                 Technology Without Barriers
-              </h1>
+              </motion.h1>
 
-              <p className="font-inter text-lg md:text-xl text-para mb-8 max-w-2xl">
+              <motion.p
+                className="font-inter text-lg md:text-xl text-para mb-8 max-w-2xl"
+                variants={fadeIn("up", 0.4)}
+              >
                 AI & Software that solve real problems Built in Nigeria,
                 designed for the world
-              </p>
+              </motion.p>
             </div>
 
             {/* Dual CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 mb-12"
+              variants={fadeIn("up", 0.5)}
+            >
               <Link to="/solutions">
                 <Button
                   variant="default"
@@ -99,10 +120,13 @@ const HeroSection = () => {
                   Discover Apps
                 </Button>
               </Link>
-            </div>
+            </motion.div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-primary-foreground/60">
+            <motion.div
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-primary-foreground/60"
+              variants={fadeIn("up", 0.6)}
+            >
               <div className="flex items-center">
                 <Icon name="Users" size={16} className="mr-2" />
                 <span className="font-inter text-sm">500+ Developers</span>
@@ -115,8 +139,8 @@ const HeroSection = () => {
                 <Icon name="Award" size={16} className="mr-2" />
                 <span className="font-inter text-sm">Enterprise Ready</span>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Demo Showcase */}
           <div className="relative">
@@ -230,7 +254,7 @@ const HeroSection = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
