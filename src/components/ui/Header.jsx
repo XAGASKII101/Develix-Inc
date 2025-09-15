@@ -82,10 +82,7 @@ const Header = () => {
             onClick={closeMenu}
           >
             <div>
-              <img
-                className="w-16 h-16"
-                src="../../../public/Develix_Logo.webp"
-              />
+              <img className="w-16 h-16" src="/Develix_Logo.webp" />
             </div>
 
             <div className="flex flex-col">
