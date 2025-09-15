@@ -44,13 +44,14 @@ const HeroSection = () => {
   const currentDemoData = demos?.[currentDemo];
 
   return (
-    <section className="relative min-h-screen  from-primary via-primary/95 to-primary/90 overflow-hidden">
+    <section
+      className="relative min-h-screen  from-primary via-primary/95 to-primary/90 overflow-hidden"
+      style={{
+        backgroundColor: "#ffffff",
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d9ff' fill-opacity='0.12'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+      }}
+    >
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-secondary rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-48 h-48 bg-accent rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-secondary/50 rounded-full blur-3xl"></div>
-      </div>
       <div className="relative z-10 container mx-auto px-6 lg:px-8 pt-24 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Left Content */}
@@ -91,7 +92,7 @@ const HeroSection = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="duration-150 border-primary-foreground/20 hover:border-accent font-inter w-full sm:w-auto"
+                  className="duration-150 border-primary-foreground/20 bg-white hover:border-accent font-inter w-full sm:w-auto"
                   iconName="Smartphone"
                   iconPosition="left"
                 >

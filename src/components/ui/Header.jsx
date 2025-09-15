@@ -43,6 +43,11 @@ const Header = () => {
       path: "/about-us",
       description: "Founder Stories & Culture",
     },
+    {
+      name: "Contact",
+      path: "/contact-us",
+      description: "Contact Develix inc",
+    },
   ];
 
   const secondaryItems = [

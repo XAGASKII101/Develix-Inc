@@ -6,10 +6,11 @@ const ProjectHero = () => {
   return (
     <section className="relative from-primary overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-32 h-32 border border-primary-foreground/20 rounded-lg rotate-12"></div>
-        <div className="absolute top-40 right-32 w-24 h-24 border border-primary-foreground/20 rounded-lg -rotate-12"></div>
-        <div className="absolute bottom-32 left-1/3 w-20 h-20 border border-primary-foreground/20 rounded-lg rotate-45"></div>
+      <div className="absolute inset-0 opacity-80">
+        <div className="absolute top-20 left-20 w-32 h-32 border border-secondary rounded-lg rotate-12"></div>
+        <div className="absolute -bottom-10 -right-10 w-32 h-32 border border-secondary rounded-lg rotate-12"></div>
+        <div className="absolute top-40 right-32 w-24 h-24 border border-accent rounded-lg -rotate-12"></div>
+        <div className="absolute bottom-10 left-1/3 w-20 h-20 border border-primary rounded-lg rotate-45"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
