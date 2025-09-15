@@ -45,8 +45,6 @@ export default function Footer() {
                 <Link to="/about-us">About Us</Link>
               </li>
               <li>Careers</li>
-              {/* <li>Partners</li> */}
-              {/* <li>Blog & Insights</li> */}
               <li>Contact</li>
             </ul>
           </div>
@@ -57,8 +55,6 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>Elixa Coin</li>
               <li>Vendra</li>
-              {/* <li>CloudOps Dashboard</li>
-            <li>Enterprise CRM</li> */}
             </ul>
           </div>
         </div>

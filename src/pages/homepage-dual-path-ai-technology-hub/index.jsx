@@ -6,6 +6,7 @@ import ValuePropositionGrid from "./components/ValuePropositionGrid";
 import FounderSection from "./components/FounderSection";
 import PartnershipBar from "./components/PartnershipBar";
 import NewsletterSection from "./components/NewsletterSection";
+import Footer from "components/ui/Footer";
 
 const Homepage = () => {
   useEffect(() => {
@@ -51,76 +52,7 @@ const Homepage = () => {
           <NewsletterSection />
         </main>
 
-        <footer className="bg-primary text-primary-foreground py-12">
-          <div className="container mx-auto px-6 lg:px-8">
-            <div className="text-center">
-              <div className="flex items-center justify-center space-x-3 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="text-primary-foreground"
-                  >
-                    <path
-                      d="M12 2L2 7L12 12L22 7L12 2Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M2 17L12 22L22 17"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M2 12L12 17L22 12"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <span className="font-space-grotesk font-bold text-xl">
-                  Develix
-                </span>
-              </div>
-
-              <p className="font-inter text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
-                Empowering businesses and consumers with cutting-edge AI and
-                software solutions. Building the future from Africa, for the
-                world.
-              </p>
-
-              <div className="flex flex-wrap items-center justify-center gap-6 text-primary-foreground/60 text-sm">
-                <span>
-                  © {new Date()?.getFullYear()} Develix. All rights reserved.
-                </span>
-                <span>•</span>
-                <a
-                  href="#"
-                  className="hover:text-primary-foreground brand-transition"
-                >
-                  Privacy Policy
-                </a>
-                <span>•</span>
-                <a
-                  href="#"
-                  className="hover:text-primary-foreground brand-transition"
-                >
-                  Terms of Service
-                </a>
-                <span>•</span>
-                <span>Made with ❤️ in Lagos, Nigeria</span>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );

@@ -9,6 +9,7 @@ import TeamSpotlight from "./components/TeamSpotlight";
 import MissionStatement from "./components/MissionStatement";
 import PartnershipPhilosophy from "./components/PartnershipPhilosophy";
 import TransparencyCommitment from "./components/TransparencyCommitment";
+import Footer from "components/ui/Footer";
 
 const AboutEcosystemPage = () => {
   const [activeSection, setActiveSection] = useState("founders");
@@ -463,34 +464,7 @@ const AboutEcosystemPage = () => {
         </div>
       </section>
       {/* Footer CTA */}
-      <section className="py-16 bg-gradient-to-br from-primary to-secondary">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-space-grotesk font-bold text-primary-foreground mb-4">
-            Join Our Journey
-          </h2>
-          <p className="text-xl text-primary-foreground/90 font-inter mb-8 leading-relaxed">
-            Whether you're a potential partner, team member, or simply someone
-            who believes in our mission, we'd love to connect with you.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact-us"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary-foreground text-primary rounded-lg font-inter font-semibold brand-transition hover:bg-primary-foreground/90 brand-hover-lift"
-            >
-              <Icon name="MessageCircle" size={20} />
-              Get In Touch
-            </a>
-            <a
-              href="/projects-hub"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-transparent text-primary-foreground border-2 border-primary-foreground rounded-lg font-inter font-semibold brand-transition hover:bg-primary-foreground hover:text-primary"
-            >
-              <Icon name="Rocket" size={20} />
-              View Our Work
-            </a>
-          </div>
-        </div>
-      </section>
+      <Footer />
     </div>
   );
 };
