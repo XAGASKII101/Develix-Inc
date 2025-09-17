@@ -98,8 +98,8 @@ const ConsultationBooking = () => {
             Book Consultation
           </div>
           <h2 className="text-3xl lg:text-5xl font-space-grotesk font-bold text-foreground mb-6">
-            Schedule Your Strategy
-            <span className="block text-secondary mt-2">Session Today</span>
+            Schedule Your Strategy <br />
+            Session Today
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Book a founder-level technical discussion to explore how AI and

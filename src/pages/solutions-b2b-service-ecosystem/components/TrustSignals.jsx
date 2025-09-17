@@ -162,8 +162,8 @@ const TrustSignals = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full text-accent text-sm font-medium mb-6">
-            <Icon name="Award" size={16} className="mr-2" />
+          <div className="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full text-sm font-medium mb-6">
+            <Icon name="Award" size={16} className="mr-1" />
             Trust & Credibility
           </div>
           <h2 className="text-3xl lg:text-5xl font-space-grotesk font-bold text-foreground mb-6">
@@ -235,7 +235,7 @@ const TrustSignals = () => {
               >
                 <div className="flex items-start space-x-4">
                   <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name={cert?.icon} size={28} className="text-accent" />
+                    <Icon name={cert?.icon} size={28} />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center mb-2">
@@ -379,11 +379,7 @@ const TrustSignals = () => {
               >
                 <div className="flex items-start space-x-4">
                   <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon
-                      name={measure?.icon}
-                      size={28}
-                      className="text-secondary"
-                    />
+                    <Icon name={measure?.icon} size={28} />
                   </div>
                   <div className="flex-1">
                     <h4 className="font-space-grotesk font-bold text-foreground mb-2">
@@ -410,7 +406,7 @@ const TrustSignals = () => {
         </motion.div>
 
         {/* Awards & Recognition */}
-        <motion.div
+        {/* <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
@@ -433,8 +429,8 @@ const TrustSignals = () => {
                 variants={fadeInUp(0.2)}
                 className="text-center bg-card rounded-xl p-8 border border-border brand-shadow-card"
               >
-                <div className="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <Icon name="Award" size={32} className="text-accent" />
+                <div className="w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <Icon name="Award" size={32} />
                 </div>
                 <h4 className="font-space-grotesk font-bold text-foreground mb-2">
                   {award?.title}
@@ -451,7 +447,7 @@ const TrustSignals = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* CTA Section */}
         <motion.div
@@ -472,7 +468,7 @@ const TrustSignals = () => {
             <Button
               variant="default"
               size="lg"
-              className="bg-primary hover:bg-primary/90 font-semibold brand-hover-lift"
+              className="bg-primary hover:bg-hover-bg duration-150 font-semibold brand-hover-lift"
               iconName="Calendar"
               iconPosition="left"
             >
@@ -481,6 +477,7 @@ const TrustSignals = () => {
             <Button
               variant="outline"
               size="lg"
+              className="border-primary-foreground/20 hover:border-accent"
               iconName="FileText"
               iconPosition="left"
             >

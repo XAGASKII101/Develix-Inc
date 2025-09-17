@@ -370,7 +370,7 @@ const PartnershipIntegrations = () => {
             <Button
               variant="default"
               size="lg"
-              className="bg-primary hover:bg-primary/90 font-semibold brand-hover-lift"
+              className="bg-primary hover:bg-hover-bg duration-150 font-semibold brand-hover-lift"
               iconName="MessageSquare"
               iconPosition="left"
             >
@@ -379,6 +379,7 @@ const PartnershipIntegrations = () => {
             <Button
               variant="outline"
               size="lg"
+              className="border-primary-foreground/20 hover:border-accent"
               iconName="FileText"
               iconPosition="left"
             >
