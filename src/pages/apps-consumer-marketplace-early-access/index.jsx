@@ -11,6 +11,9 @@ import Icon from "../../components/AppIcon";
 import Image from "../../components/AppImage";
 import Footer from "components/ui/Footer";
 
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "../../lib/animations";
+
 const AppsConsumerMarketplace = () => {
   const [selectedApp, setSelectedApp] = useState(null);
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
@@ -121,8 +124,18 @@ const AppsConsumerMarketplace = () => {
       <HeroSection onJoinWaitlist={handleJoinWaitlist} />
       {/* Featured Apps */}
       <div className="bg-background py-16">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
+        <motion.div
+          className="max-w-7xl mx-auto px-6 lg:px-8"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {/* Section Header */}
+          <motion.div
+            className="text-center mb-12"
+            variants={fadeIn("up", 0.2)}
+          >
             <h2 className="font-space-grotesk font-bold text-3xl lg:text-4xl text-foreground mb-4">
               Featured Apps
             </h2>
@@ -130,24 +143,20 @@ const AppsConsumerMarketplace = () => {
               Discover our flagship applications designed to solve real problems
               for African users
             </p>
-          </div>
+          </motion.div>
 
+          {/* App Cards Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {apps?.map((app) => (
-              <AppCard
+            {apps?.map((app, index) => (
+              <motion.div
                 key={app?.id}
-                app={app}
-                onJoinWaitlist={handleJoinWaitlist}
-              />
+                variants={fadeIn("up", index * 0.15)} // stagger effect
+              >
+                <AppCard app={app} onJoinWaitlist={handleJoinWaitlist} />
+              </motion.div>
             ))}
           </div>
-
-          <div className="text-center">
-            <Button variant="outline" iconName="Grid3x3" iconPosition="left">
-              View All Apps
-            </Button>
-          </div>
-        </div>
+        </motion.div>
       </div>
       {/* App Preview Section */}
       {selectedApp && (
@@ -167,10 +176,14 @@ const AppsConsumerMarketplace = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {apps?.map((app) => (
-              <div
+            {apps?.map((app, i) => (
+              <motion.div
                 key={app?.id}
                 onClick={() => handleAppSelect(app)}
+                variants={fadeIn("up", 0.1 * i)} // stagger animations
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.2 }}
                 className="bg-card rounded-xl border border-border p-6 cursor-pointer brand-shadow-card brand-transition brand-hover-lift hover:brand-shadow-modal"
               >
                 <div className="flex items-center space-x-4 mb-4">
@@ -210,7 +223,7 @@ const AppsConsumerMarketplace = () => {
                     Preview
                   </Button>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -218,7 +231,13 @@ const AppsConsumerMarketplace = () => {
       {/* Coming Soon Section */}
       <div className="bg-background py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <motion.div
+            variants={fadeIn("up", 0)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            className="text-center mb-12"
+          >
             <h2 className="font-space-grotesk font-bold text-3xl lg:text-4xl text-foreground mb-4">
               Coming Soon
             </h2>
@@ -226,12 +245,16 @@ const AppsConsumerMarketplace = () => {
               Get early access to our upcoming applications and be the first to
               experience new innovations
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {comingSoonApps?.map((app) => (
-              <div
+            {comingSoonApps?.map((app, i) => (
+              <motion.div
                 key={app?.id}
+                variants={fadeIn("up", 0.15 * i)} // staggered animation
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.2 }}
                 className="bg-card rounded-xl border border-border overflow-hidden brand-shadow-card brand-hover-lift"
               >
                 <div className="relative h-48">
@@ -280,7 +303,7 @@ const AppsConsumerMarketplace = () => {
                     Get Notified
                   </Button>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -290,7 +313,7 @@ const AppsConsumerMarketplace = () => {
       {/* Community Section */}
       <CommunitySection />
       {/* Educational Content */}
-      <div className="bg-background py-16">
+      {/* <div className="bg-background py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-space-grotesk font-bold text-3xl lg:text-4xl text-foreground mb-4">
@@ -367,11 +390,11 @@ const AppsConsumerMarketplace = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Final CTA */}
-      <div className="bg-gradient-to-r from-primary to-secondary py-16">
+      <div className="bg-secondary py-16">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="font-space-grotesk font-bold text-3xl lg:text-4xl text-primary-foreground mb-4">
+          <h2 className="font-space-grotesk font-bold text-3xl lg:text-4xl text-primary mb-4">
             Ready to Experience the Future?
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
@@ -394,7 +417,7 @@ const AppsConsumerMarketplace = () => {
               size="lg"
               iconName="MessageCircle"
               iconPosition="left"
-              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
+              className="border-primary-foreground text-primary-foreground hover:bg-accent hover:border-accent"
             >
               Join Community
             </Button>
