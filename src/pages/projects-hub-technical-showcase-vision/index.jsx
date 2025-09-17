@@ -12,6 +12,9 @@ import Icon from "../../components/AppIcon";
 import Button from "../../components/ui/Button";
 import Footer from "components/ui/Footer";
 
+import { motion } from "framer-motion";
+import { staggerContainer, fadeIn } from "../../lib/animations"; // update path
+
 const ProjectsHub = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeFilter, setActiveFilter] = useState("all");
@@ -1075,8 +1078,18 @@ const ProjectsHub = () => {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 lg:px-8 py-16 space-y-16">
         {/* Project Filters */}
-        <section className="space-y-8">
-          <div className="text-center space-y-4">
+        <motion.section
+          className="space-y-8"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {/* Heading */}
+          <motion.div
+            className="text-center space-y-4"
+            variants={fadeIn("up", 0.1)}
+          >
             <h2 className="font-space-grotesk font-bold text-3xl lg:text-4xl text-foreground">
               Our Project Portfolio
             </h2>
@@ -1084,10 +1097,13 @@ const ProjectsHub = () => {
               Discover our innovative solutions across blockchain, AI, and
               fintech with detailed technical insights and live demonstrations.
             </p>
-          </div>
+          </motion.div>
 
           {/* Filter Tabs */}
-          <div className="flex flex-wrap justify-center gap-2">
+          <motion.div
+            className="flex flex-wrap justify-center gap-2"
+            variants={fadeIn("up", 0.15)}
+          >
             {filters?.map((filter) => (
               <button
                 key={filter?.id}
@@ -1104,44 +1120,73 @@ const ProjectsHub = () => {
                 </span>
               </button>
             ))}
-          </div>
+          </motion.div>
 
           {/* Projects Grid */}
-          <div className="grid lg:grid-cols-3 gap-6">
+          <motion.div
+            className="grid lg:grid-cols-3 gap-6"
+            variants={staggerContainer}
+          >
             {filteredProjects?.map((project, index) => (
-              <ProjectCard
+              <motion.div
                 key={project?.id}
-                project={project}
-                featured={index === 0 && activeFilter === "all"}
-              />
+                variants={fadeIn("up", index * 0.1)} // stagger each card
+              >
+                <ProjectCard
+                  project={project}
+                  featured={index === 0 && activeFilter === "all"}
+                />
+              </motion.div>
             ))}
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
 
         {/* Featured Project Deep Dive */}
-        <section className="space-y-12">
-          <div className="text-center space-y-4">
+        <motion.section
+          className="space-y-12"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          {/* Heading */}
+          <motion.div
+            className="text-center space-y-4"
+            variants={fadeIn("up", 0.1)}
+          >
             <h2 className="font-space-grotesk font-bold text-3xl lg:text-4xl text-foreground">
               Featured Project Deep Dive
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Get an in-depth look at {featuredProject?.name} with comprehensive
-              technical specifications, live demos, and development insights.
+              Get an in-depth look at{" "}
+              <span className="font-semibold text-foreground">
+                {featuredProject?.name}
+              </span>{" "}
+              with comprehensive technical specifications, live demos, and
+              development insights.
             </p>
-          </div>
+          </motion.div>
 
           {/* Technical Specifications */}
-          <TechnicalSpecs project={featuredProject} />
+          <motion.div variants={fadeIn("up", 0.15)}>
+            <TechnicalSpecs project={featuredProject} />
+          </motion.div>
 
           {/* Live Demo */}
-          <LiveDemo project={featuredProject} />
+          <motion.div variants={fadeIn("up", 0.25)}>
+            <LiveDemo project={featuredProject} />
+          </motion.div>
 
           {/* Development Timeline */}
-          <DevelopmentTimeline project={featuredProject} />
+          <motion.div variants={fadeIn("up", 0.35)}>
+            <DevelopmentTimeline project={featuredProject} />
+          </motion.div>
 
           {/* User Testimonials */}
-          <UserTestimonials project={featuredProject} />
-        </section>
+          <motion.div variants={fadeIn("up", 0.45)}>
+            <UserTestimonials project={featuredProject} />
+          </motion.div>
+        </motion.section>
 
         {/* Future Roadmap */}
         <section className="space-y-8">
