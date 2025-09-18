@@ -121,3 +121,12 @@ export const staggerContainer = (stagger = 0.15, delayChildren = 0) => ({
     },
   },
 });
+
+export const faqVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.4, ease: "easeOut" },
+  }),
+};
