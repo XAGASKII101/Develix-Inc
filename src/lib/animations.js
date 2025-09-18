@@ -103,11 +103,21 @@ export const fadeUp = {
   }),
 };
 
-export const staggerContainer = {
+// export const staggerContainer = {
+//   hidden: {},
+//   show: {
+//     transition: {
+//       staggerChildren: 0.2,
+//     },
+//   },
+// };
+
+export const staggerContainer = (stagger = 0.15, delayChildren = 0) => ({
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: stagger,
+      delayChildren,
     },
   },
-};
+});

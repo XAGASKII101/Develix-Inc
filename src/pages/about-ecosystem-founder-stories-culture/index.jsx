@@ -11,6 +11,9 @@ import PartnershipPhilosophy from "./components/PartnershipPhilosophy";
 import TransparencyCommitment from "./components/TransparencyCommitment";
 import Footer from "components/ui/Footer";
 
+import { motion } from "framer-motion";
+import { staggerContainer, fadeIn, fadeInUp } from "../../lib/animations";
+
 const AboutEcosystemPage = () => {
   const [activeSection, setActiveSection] = useState("founders");
   const [currentLanguage, setCurrentLanguage] = useState("en");
@@ -318,10 +321,20 @@ const AboutEcosystemPage = () => {
       </Helmet>
       <Header />
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+      <motion.section
+        className="pt-24 pb-16 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="flex text-center items-center justify-center flex-col mb-4">
+          {/* Heading */}
+          <motion.div className="text-center mb-16" variants={staggerContainer}>
+            <motion.div
+              className="flex text-center items-center justify-center flex-col mb-4"
+              variants={fadeIn("up", 0.1)}
+            >
               <div className="inline-flex items-center px-4 pb-4 pt-10 bg-secondary/20 rounded-full text-sm font-medium">
                 <Icon name="Users" size={16} className="mr-2" />
                 About us
@@ -332,19 +345,25 @@ const AboutEcosystemPage = () => {
               <p className="text-lg text-para font-inter font-semibold">
                 From Adazi to the World
               </p>
-            </div>
+            </motion.div>
 
-            <p className="text-xl text-para font-inter max-w-4xl mx-auto leading-relaxed">
+            <motion.p
+              className="text-xl text-para font-inter max-w-4xl mx-auto leading-relaxed"
+              variants={fadeIn("up", 0.25)}
+            >
               Founded in 2025 by 17-year-old Alexius Dubem and 16-year-old
               Jerome Ebube in Anambra State — a journey from a spark of dreams
               to trials, reality, and a passion for technology.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           {/* Navigation Pills */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {sections?.map((section) => (
-              <button
+          <motion.div
+            className="flex flex-wrap justify-center gap-3 mb-12"
+            variants={staggerContainer}
+          >
+            {sections?.map((section, i) => (
+              <motion.button
                 key={section?.id}
                 onClick={() => scrollToSection(section?.id)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-full font-inter font-medium text-sm brand-transition ${
@@ -352,54 +371,105 @@ const AboutEcosystemPage = () => {
                     ? "bg-primary text-primary-foreground"
                     : "bg-card text-muted-foreground hover:bg-primary/10 hover:text-primary brand-shadow-card"
                 }`}
+                variants={fadeIn("up", i * 0.05)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <Icon name={section?.icon} size={16} />
                 {section?.label}
-              </button>
+              </motion.button>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
       {/* Founders Section */}
-      <section id="founders" className="py-16">
+      <motion.section
+        id="founders"
+        className="py-16"
+        variants={staggerContainer(0.2, 0)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-space-grotesk font-bold text-foreground mb-4">
+          {/* Heading */}
+          <motion.div
+            className="text-center mb-12"
+            variants={staggerContainer(0.15, 0)}
+          >
+            <motion.h2
+              className="text-3xl lg:text-4xl font-space-grotesk font-bold text-foreground mb-4"
+              variants={fadeIn("up", 0.1)}
+            >
               Meet Our Founders
-            </h2>
-            <p className="text-lg text-muted-foreground font-inter max-w-3xl mx-auto">
+            </motion.h2>
+            <motion.p
+              className="text-lg text-muted-foreground font-inter max-w-3xl mx-auto"
+              variants={fadeIn("up", 0.2)}
+            >
               Two passionate technologists united by a shared vision of making
               advanced technology accessible across Africa and beyond.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div className="space-y-12">
+          {/* Founder Profiles */}
+          <motion.div
+            className="space-y-12"
+            variants={staggerContainer(0.25, 0)}
+          >
             {founders?.map((founder, index) => (
-              <FounderProfile key={index} founder={founder} />
+              <motion.div key={index} variants={fadeIn("up", index * 0.15)}>
+                <FounderProfile founder={founder} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
       {/* Journey Section */}
       <section id="journey" className="py-16 bg-muted/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-space-grotesk font-bold text-foreground mb-4">
+          <motion.div
+            className="text-center mb-12"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.h2
+              className="text-3xl lg:text-4xl font-space-grotesk font-bold text-foreground mb-4"
+              variants={fadeInUp(0.2)}
+            >
               Our Journey
-            </h2>
-            <p className="text-lg text-muted-foreground font-inter max-w-3xl mx-auto">
+            </motion.h2>
+            <motion.p
+              className="text-lg text-muted-foreground font-inter max-w-3xl mx-auto"
+              variants={fadeInUp(0.2)}
+            >
               From a chance meeting at a Lagos tech meetup to building one of
               Africa's most promising technology companies.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <JourneyTimeline milestones={journeyMilestones} />
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <JourneyTimeline milestones={journeyMilestones} />
+          </motion.div>
         </div>
       </section>
       {/* Culture Section */}
       <section id="culture" className="py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <motion.div
+            className="text-center mb-12"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp(0)}
+          >
             <h2 className="text-3xl lg:text-4xl font-space-grotesk font-bold text-foreground mb-4">
               Our Culture
             </h2>
@@ -407,19 +477,34 @@ const AboutEcosystemPage = () => {
               The values and principles that guide everything we do, from
               product decisions to community relationships.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <motion.div
+            className="grid lg:grid-cols-2 gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {cultureValues?.map((culture, index) => (
-              <CultureCard key={index} culture={culture} />
+              <motion.div key={index} variants={fadeInUp}>
+                <CultureCard culture={culture} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
       {/* Team Section */}
       <section id="team" className="py-16 bg-muted/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
+          {/* Heading */}
+          <motion.div
+            className="text-center mb-12"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp(0)}
+          >
             <h2 className="text-3xl lg:text-4xl font-space-grotesk font-bold text-foreground mb-4">
               Team Spotlight
             </h2>
@@ -427,22 +512,38 @@ const AboutEcosystemPage = () => {
               Meet some of the talented individuals who bring diverse
               backgrounds and shared commitment to African tech advancement.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Team Members */}
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {teamMembers?.map((member, index) => (
-              <TeamSpotlight key={index} member={member} />
+              <motion.div key={index} variants={fadeInUp(0)}>
+                <TeamSpotlight member={member} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="text-center mt-12">
+          {/* Footer Info */}
+          <motion.div
+            className="text-center mt-12"
+            variants={fadeInUp(0)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 rounded-full">
               <Icon name="Users" size={20} className="text-primary" />
               <span className="text-primary font-inter font-semibold">
                 18 team members across Nigeria and growing
               </span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
       {/* Mission Section */}
