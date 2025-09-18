@@ -26,43 +26,43 @@ const AboutEcosystemPage = () => {
   // Mock data for founders
   const founders = [
     {
-      name: "Alexius Chukwuemeka",
-      role: "Chief Executive Officer & Co-Founder",
-      tagline:
-        "Visionary leader bridging African innovation with global markets",
+      name: "Alexius Dubem",
+      role: "CEO & Co-Founder",
+      // tagline:
+      //   "Visionary leader bridging African innovation with global markets",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
       icon: "Crown",
-      bio: `Born in Lagos and raised in Abuja, Alexius discovered his passion for technology while helping his grandmother's small business go digital in 2018. After studying Computer Science at the University of Lagos and working with fintech startups across West Africa, he realized that most advanced technologies weren't reaching the people who needed them most. This insight led to the founding of Develix with a mission to make AI and blockchain accessible to everyone, from Lagos street vendors to London enterprises.`,
+      bio: `At just 17, Alexius combines entrepreneurial spirit with a passion for technology and innovation. A self-taught builder with a drive to create impactful products. Develix is proof that age is not a limit. We’re showing the world that young Africans can dream big, build boldly, and inspire globally. Dedicated to creating technology that empowers young people, strengthens Africa’s digital economy, and inspires the next generation of innovators.`,
       stats: [
-        { value: "6+", label: "Years Experience" },
-        { value: "12", label: "Products Launched" },
-        { value: "50K+", label: "Lives Impacted" },
+        { value: "2025", label: "Year founding" },
+        { value: "2", label: "Products Launched" },
+        { value: "17", label: "Age at founding" },
       ],
-      social: [
-        { platform: "LinkedIn", icon: "Linkedin", url: "#" },
-        { platform: "Twitter", icon: "Twitter", url: "#" },
-        { platform: "GitHub", icon: "Github", url: "#" },
-      ],
+      // social: [
+      //   { platform: "LinkedIn", icon: "Linkedin", url: "#" },
+      //   { platform: "Twitter", icon: "Twitter", url: "#" },
+      //   { platform: "GitHub", icon: "Github", url: "#" },
+      // ],
     },
     {
-      name: "Jerome Adebayo",
-      role: "Chief Technology Officer & Co-Founder",
-      tagline: "Technical architect building scalable solutions for Africa",
+      name: "Jerome Ebube",
+      role: "CTO & Co-Founder",
+      // tagline: "Technical architect building scalable solutions for Africa",
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
       icon: "Code",
-      bio: `Jerome's journey began in Ibadan, where he taught himself programming at age 14 using a shared computer at a local cyber café. After earning a scholarship to study Software Engineering at Obafemi Awolowo University, he worked with international tech companies remotely while staying rooted in Nigeria. His experience building systems that work reliably despite infrastructure challenges makes him uniquely qualified to lead Develix's technical vision of creating robust, accessible technology for emerging markets.`,
+      bio: `16-year-old programmer and systems thinker with a sharp eye for innovation. Special interest in blockchain, AI, and building scalable products. Africa can lead the future of technology. Develix is my way of proving that the best solutions don’t just come from Silicon Valley — they can be built right here in Anambra. Designs and develops Develix’s platforms, leading the company’s technical growth while balancing learning and building.`,
       stats: [
-        { value: "8+", label: "Years Coding" },
-        { value: "25+", label: "Systems Built" },
-        { value: "99.9%", label: "Uptime Record" },
+        { value: "2+", label: "Years Coding" },
+        { value: "5+", label: "Systems Built" },
+        { value: "16", label: "Age at founding" },
       ],
-      social: [
-        { platform: "LinkedIn", icon: "Linkedin", url: "#" },
-        { platform: "GitHub", icon: "Github", url: "#" },
-        { platform: "Stack Overflow", icon: "Code", url: "#" },
-      ],
+      // social: [
+      //   { platform: "LinkedIn", icon: "Linkedin", url: "#" },
+      //   { platform: "GitHub", icon: "Github", url: "#" },
+      //   { platform: "Stack Overflow", icon: "Code", url: "#" },
+      // ],
     },
   ];
 
