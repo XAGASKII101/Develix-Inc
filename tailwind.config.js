@@ -1,11 +1,13 @@
+import tailwindcssAnimate from "tailwindcss-animate";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
   ],
   prefix: "",
   theme: {
@@ -18,57 +20,63 @@ export default {
     },
     extend: {
       colors: {
-        border: "var(--color-border)", /* gray-200 */
-        input: "var(--color-input)", /* white */
-        ring: "var(--color-ring)", /* electric-blue */
-        background: "var(--color-background)", /* white */
-        foreground: "var(--color-foreground)", /* rich-black */
+        border: "var(--color-border)" /* gray-200 */,
+        input: "var(--color-input)" /* white */,
+        ring: "var(--color-ring)" /* electric-blue */,
+        background: "var(--color-background)" /* white */,
+        foreground: "var(--color-foreground)" /* rich-black */,
         primary: {
-          DEFAULT: "var(--color-primary)", /* deep-navy */
-          foreground: "var(--color-primary-foreground)", /* white */
+          DEFAULT: "var(--color-primary)" /* deep-navy */,
+          foreground: "var(--color-primary-foreground)" /* white */,
         },
         secondary: {
-          DEFAULT: "var(--color-secondary)", /* electric-blue */
-          foreground: "var(--color-secondary-foreground)", /* deep-navy */
+          DEFAULT: "var(--color-secondary)" /* electric-blue */,
+          foreground: "var(--color-secondary-foreground)" /* deep-navy */,
+        },
+        para: {
+          DEFAULT: "var(--color-para)",
+        },
+        hover: {
+          bg: "var(--color-hover-bg)",
         },
         destructive: {
-          DEFAULT: "var(--color-destructive)", /* red-500 */
-          foreground: "var(--color-destructive-foreground)", /* white */
+          DEFAULT: "var(--color-destructive)" /* red-500 */,
+          foreground: "var(--color-destructive-foreground)" /* white */,
         },
         muted: {
-          DEFAULT: "var(--color-muted)", /* gray-50 */
-          foreground: "var(--color-muted-foreground)", /* gray-600 */
+          DEFAULT: "var(--color-muted)" /* gray-50 */,
+          foreground: "var(--color-muted-foreground)" /* gray-600 */,
         },
         accent: {
-          DEFAULT: "var(--color-accent)", /* warm-gold */
-          foreground: "var(--color-accent-foreground)", /* deep-navy */
+          DEFAULT: "var(--color-accent)" /* warm-gold */,
+          foreground: "var(--color-accent-foreground)" /* deep-navy */,
         },
         popover: {
-          DEFAULT: "var(--color-popover)", /* white */
-          foreground: "var(--color-popover-foreground)", /* rich-black */
+          DEFAULT: "var(--color-popover)" /* white */,
+          foreground: "var(--color-popover-foreground)" /* rich-black */,
         },
         card: {
-          DEFAULT: "var(--color-card)", /* white */
-          foreground: "var(--color-card-foreground)", /* rich-black */
+          DEFAULT: "var(--color-card)" /* white */,
+          foreground: "var(--color-card-foreground)" /* rich-black */,
         },
         success: {
-          DEFAULT: "var(--color-success)", /* green-500 */
-          foreground: "var(--color-success-foreground)", /* white */
+          DEFAULT: "var(--color-success)" /* green-500 */,
+          foreground: "var(--color-success-foreground)" /* white */,
         },
         warning: {
-          DEFAULT: "var(--color-warning)", /* yellow-600 */
-          foreground: "var(--color-warning-foreground)", /* white */
+          DEFAULT: "var(--color-warning)" /* yellow-600 */,
+          foreground: "var(--color-warning-foreground)" /* white */,
         },
         error: {
-          DEFAULT: "var(--color-error)", /* red-500 */
-          foreground: "var(--color-error-foreground)", /* white */
+          DEFAULT: "var(--color-error)" /* red-500 */,
+          foreground: "var(--color-error-foreground)" /* white */,
         },
-        surface: "var(--color-surface)", /* gray-50 */
+        surface: "var(--color-surface)" /* gray-50 */,
       },
       fontFamily: {
-        'space-grotesk': ['Space Grotesk', 'sans-serif'],
-        'inter': ['Inter', 'sans-serif'],
-        'jetbrains': ['JetBrains Mono', 'monospace'],
+        "space-grotesk": ["Space Grotesk", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        jetbrains: ["JetBrains Mono", "monospace"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -105,20 +113,18 @@ export default {
         "scale-in": "scale-in 2s ease-out",
       },
       spacing: {
-        '18': '4.5rem',
-        '88': '22rem',
+        18: "4.5rem",
+        88: "22rem",
       },
       boxShadow: {
-        'brand-card': '0 4px 16px rgba(10, 22, 40, 0.08)',
-        'brand-modal': '0 8px 32px rgba(10, 22, 40, 0.12)',
-        'brand-subtle': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+        "brand-card": "0 4px 16px rgba(10, 22, 40, 0.08)",
+        "brand-modal": "0 8px 32px rgba(10, 22, 40, 0.12)",
+        "brand-subtle": "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
       },
       transitionTimingFunction: {
-        'brand': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        brand: "cubic-bezier(0.4, 0, 0.2, 1)",
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-  ],
-}
+  // plugins: [require("tailwindcss-animate")],
+};

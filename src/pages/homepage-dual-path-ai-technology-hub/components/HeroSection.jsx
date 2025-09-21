@@ -1,29 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Button from '../../../components/ui/Button';
-import Icon from '../../../components/AppIcon';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { fadeIn, staggerContainer } from "../../../lib/animations";
+
+import { Link } from "react-router-dom";
+import Button from "../../../components/ui/Button";
+import Icon from "../../../components/AppIcon";
 
 const HeroSection = () => {
   const [currentDemo, setCurrentDemo] = useState(0);
-  const [userType, setUserType] = useState('mixed'); // 'b2b', 'b2c', 'mixed'
+  const [userType, setUserType] = useState("mixed"); // 'b2b', 'b2c', 'mixed'
 
   const demos = [
     {
-      id: 'elixa',
-      title: 'Elixa Coin',
-      subtitle: 'Blockchain Innovation',
-      description: 'Decentralized finance solutions built on Polygon network with smart contract automation',
-      features: ['Smart Contracts', 'DeFi Integration', 'Cross-chain Support'],
-      color: 'from-secondary to-accent'
+      id: "elixa",
+      title: "Elixa Coin",
+      subtitle: "Blockchain Innovation",
+      description:
+        "Decentralized finance solutions built on Polygon network with smart contract automation",
+      features: ["Smart Contracts", "DeFi Integration", "Cross-chain Support"],
+      color: "from-secondary to-accent",
     },
     {
-      id: 'vendra',
-      title: 'Vendra AI',
-      subtitle: 'Intelligent Automation',
-      description: 'AI-powered business process automation with natural language processing capabilities',
-      features: ['NLP Processing', 'Workflow Automation', 'Predictive Analytics'],
-      color: 'from-primary to-secondary'
-    }
+      id: "vendra",
+      title: "Vendra AI",
+      subtitle: "Intelligent Automation",
+      description:
+        "AI-powered business process automation with natural language processing capabilities",
+      features: [
+        "NLP Processing",
+        "Workflow Automation",
+        "Predictive Analytics",
+      ],
+      color: "from-primary to-secondary",
+    },
   ];
 
   useEffect(() => {
@@ -36,66 +45,88 @@ const HeroSection = () => {
   const currentDemoData = demos?.[currentDemo];
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-primary via-primary/95 to-primary/90 overflow-hidden">
+    <section
+      className="relative min-h-screen from-primary via-primary/95 to-primary/90 overflow-hidden"
+      style={{
+        backgroundColor: "#ffffff",
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d9ff' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+      }}
+    >
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-secondary rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-48 h-48 bg-accent rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-secondary/50 rounded-full blur-3xl"></div>
-      </div>
       <div className="relative z-10 container mx-auto px-6 lg:px-8 pt-24 pb-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+        <motion.div
+          className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {/* Left Content */}
-          <div className="text-center lg:text-left">
-            <div className="mb-6">
-              <div className="inline-flex items-center px-4 py-2 bg-secondary/20 rounded-full mb-6">
-                <Icon name="Zap" size={16} className="text-secondary mr-2" />
-                <span className="text-secondary font-inter font-medium text-sm">
+          <motion.div
+            className="text-center flex flex-col items-center lg:items-start lg:text-start"
+            variants={fadeIn("right", 0.1)}
+          >
+            <div className="mb-6 flex flex-col items-center lg:items-start">
+              <motion.div
+                className="inline-flex items-center px-4 py-2 bg-secondary/20 rounded-full mb-6"
+                variants={fadeIn("up", 0.2)}
+              >
+                <Icon name="Zap" size={16} className="mr-2" />
+                <span className="font-inter font-medium text-sm">
                   Practical Innovation
                 </span>
-              </div>
-              
-              <h1 className="font-space-grotesk font-bold text-4xl md:text-5xl lg:text-6xl text-primary-foreground leading-tight mb-6">
-                AI & Software that{' '}
-                <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
-                  solve real problems
-                </span>
-              </h1>
-              
-              <p className="font-inter text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl">
-                Building the future from Africa, for the world. Empowering businesses and consumers with cutting-edge technology that delivers measurable impact.
-              </p>
+              </motion.div>
+              <motion.h1
+                className="font-space-grotesk font-bold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6"
+                variants={fadeIn("up", 0.3)}
+              >
+                Technology Without Barriers
+              </motion.h1>
+
+              <motion.p
+                className="font-inter text-lg md:text-xl text-para mb-8 max-w-2xl"
+                variants={fadeIn("up", 0.4)}
+              >
+                AI & Software that solve real problems Built in Nigeria,
+                designed for the world
+              </motion.p>
             </div>
 
             {/* Dual CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link to="/solutions-b2b-service-ecosystem">
-                <Button 
-                  variant="default" 
-                  size="lg" 
-                  className="bg-secondary hover:bg-secondary/90 text-primary font-inter font-semibold brand-hover-lift w-full sm:w-auto"
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 mb-12"
+              variants={fadeIn("up", 0.5)}
+            >
+              <Link to="/solutions">
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="hover:bg-hover-bg font-inter font-semibold w-full sm:w-auto duration-150 brand-hover-lift"
                   iconName="Building2"
                   iconPosition="left"
                 >
                   Explore Solutions
                 </Button>
               </Link>
-              
-              <Link to="/apps-consumer-marketplace-early-access">
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-secondary text-secondary hover:bg-secondary hover:text-primary font-inter font-semibold brand-hover-lift w-full sm:w-auto"
+
+              <Link to="/marketplace">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="duration-150 border-primary-foreground/20 bg-white hover:border-accent font-inter w-full sm:w-auto"
                   iconName="Smartphone"
                   iconPosition="left"
                 >
                   Discover Apps
                 </Button>
               </Link>
-            </div>
+            </motion.div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-primary-foreground/60">
+            <motion.div
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-primary-foreground/60"
+              variants={fadeIn("up", 0.6)}
+            >
               <div className="flex items-center">
                 <Icon name="Users" size={16} className="mr-2" />
                 <span className="font-inter text-sm">500+ Developers</span>
@@ -108,62 +139,112 @@ const HeroSection = () => {
                 <Icon name="Award" size={16} className="mr-2" />
                 <span className="font-inter text-sm">Enterprise Ready</span>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Demo Showcase */}
           <div className="relative">
             <div className="bg-background/10 backdrop-blur-md rounded-2xl p-8 border border-primary-foreground/20 brand-shadow-modal">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
-                  <div className={`w-12 h-12 bg-gradient-to-br ${currentDemoData?.color} rounded-xl flex items-center justify-center`}>
-                    <Icon 
-                      name={currentDemoData?.id === 'elixa' ? 'Coins' : 'Brain'} 
-                      size={24} 
-                      className="text-primary-foreground" 
+                  <div
+                    className={`w-12 h-12 bg-gradient-to-br ${currentDemoData?.color} rounded-xl flex items-center justify-center duration-100`}
+                  >
+                    <Icon
+                      name={currentDemoData?.id === "elixa" ? "Coins" : "Brain"}
+                      size={24}
+                      className="text-primary-foreground transition-all duration-100"
                     />
                   </div>
-                  <div>
-                    <h3 className="font-space-grotesk font-bold text-xl text-primary-foreground">
-                      {currentDemoData?.title}
-                    </h3>
-                    <p className="font-inter text-sm text-primary-foreground/70">
-                      {currentDemoData?.subtitle}
-                    </p>
-                  </div>
+
+                  {/* Animate title + subtitle */}
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentDemo}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                    >
+                      <h3 className="font-space-grotesk font-bold text-xl ">
+                        {currentDemoData?.title}
+                      </h3>
+                      <p className="font-inter text-sm text-primary-foreground/70">
+                        {currentDemoData?.subtitle}
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
                 </div>
-                
+
+                {/* Dots navigation */}
                 <div className="flex space-x-2">
-                  {demos?.map((_, index) => (
+                  {demos.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentDemo(index)}
                       className={`w-2 h-2 rounded-full brand-transition ${
-                        index === currentDemo ? 'bg-secondary' : 'bg-primary-foreground/30'
+                        index === currentDemo
+                          ? "bg-secondary"
+                          : "bg-primary-foreground/30"
                       }`}
                     />
                   ))}
                 </div>
               </div>
 
-              <p className="font-inter text-primary-foreground/80 mb-6">
-                {currentDemoData?.description}
-              </p>
+              {/* Animate description */}
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={currentDemo + "-desc"}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="font-inter text-primary-foreground/80 mb-6"
+                >
+                  {currentDemoData?.description}
+                </motion.p>
+              </AnimatePresence>
 
-              <div className="grid grid-cols-1 gap-3 mb-6">
-                {currentDemoData?.features?.map((feature, index) => (
-                  <div key={index} className="flex items-center">
-                    <Icon name="Check" size={16} className="text-secondary mr-3" />
-                    <span className="font-inter text-sm text-primary-foreground/90">
-                      {feature}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              {/* Animate features */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentDemo + "-features"}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{
+                    duration: 0.4,
+                    ease: "easeInOut",
+                    staggerChildren: 0.1,
+                  }}
+                  className="grid grid-cols-1 gap-3 mb-6"
+                >
+                  {currentDemoData?.features?.map((feature, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -10 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                      className="flex items-center"
+                    >
+                      <Icon
+                        name="Check"
+                        size={16}
+                        className="text-secondary mr-3"
+                      />
+                      <span className="font-inter text-sm text-primary-foreground/90">
+                        {feature}
+                      </span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
 
-              <Link to="/projects-hub-technical-showcase-vision">
-                <Button 
-                  variant="ghost" 
+              <Link to="/projects-hub">
+                <Button
+                  variant="ghost"
                   className="text-secondary hover:bg-secondary/20 font-inter font-medium w-full"
                   iconName="ArrowRight"
                   iconPosition="right"
@@ -172,16 +253,16 @@ const HeroSection = () => {
                 </Button>
               </Link>
             </div>
-
-            {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent rounded-full animate-pulse"></div>
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-secondary rounded-full animate-pulse delay-1000"></div>
           </div>
-        </div>
+        </motion.div>
       </div>
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <Icon name="ChevronDown" size={24} className="text-primary-foreground/60" />
+        <Icon
+          name="ChevronDown"
+          size={24}
+          className="text-primary-foreground/60"
+        />
       </div>
     </section>
   );
